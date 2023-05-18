@@ -19,7 +19,6 @@ func main(){
 		Certificates: []tls.Certificate{cer},
 	}
 
-
     tlsConfig.GetConfigForClient = func(chi *tls.ClientHelloInfo) (*tls.Config, error) {
 		    CipherSuites        := chi.CipherSuites
 		    ServerName          := chi.ServerName
