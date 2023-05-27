@@ -26,9 +26,10 @@ import (
 // It implements the net.Conn interface.
 type Conn struct {
 	// constant
-	conn        net.Conn
-	isClient    bool
-	handshakeFn func(context.Context) error // (*Conn).clientHandshake or serverHandshake
+	conn            net.Conn
+	isClient        bool
+	handshakeFn     func(context.Context) error // (*Conn).clientHandshake or serverHandshake
+	ClientHelloInfo *ClientHelloInfo
 
 	// isHandshakeComplete is true if the connection is currently transferring
 	// application data (i.e. is not currently processing a handshake).
