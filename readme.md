@@ -2,7 +2,7 @@
 
 Ctls is a fork of go `crypto/tls` to add the TLS Extension into ClientHello info as implemented there : https://go-review.googlesource.com/c/go/+/471396
 
-You can then retrieve it by GetCertificat or GetConfigForClient  callback from tls.Config : 
+You can then retrieve it by GetCertificat or GetConfigForClient or directly in tls.Con  callback from tls.Config : 
 
 ```go
 package main 
@@ -30,4 +30,16 @@ func main(){
             /* ... */
         }
 }
+```
+
+in tls.Con
+
+```go
+
+if tlsCon, ok := con.(*tls.Conn); ok && tlsCon != nil {
+	chi := tlsCon.ClientHelloInfo
+
+	/* ... */
+}
+
 ```
