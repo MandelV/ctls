@@ -895,6 +895,7 @@ func clientHelloInfo(ctx context.Context, c *Conn, clientHello *clientHelloMsg) 
 		SignatureSchemes:  clientHello.supportedSignatureAlgorithms,
 		SupportedProtos:   clientHello.alpnProtocols,
 		SupportedVersions: supportedVersions,
+		SSLVersion:        clientHello.vers,
 		Extensions:        clientHello.extensions,
 		Conn:              c.conn,
 		config:            c.config,
