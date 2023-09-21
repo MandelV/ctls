@@ -4,7 +4,7 @@
 
 //go:build boringcrypto
 
-package ctls
+package tls
 
 import (
 	"github.com/MandelV/ctls/internal/boring/fipstls"
