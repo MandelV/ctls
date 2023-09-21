@@ -4,7 +4,7 @@
 
 //go:build unix
 
-package ctls
+package tls
 
 import (
 	"errors"

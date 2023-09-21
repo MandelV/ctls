@@ -4,7 +4,7 @@
 
 //go:build !boringcrypto
 
-package ctls
+package tls
 
 func needFIPS() bool { return false }
 
